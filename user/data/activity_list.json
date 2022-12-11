@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "activity":"Running",
+        "step":1,
+        "calorire-burned":10
+    },
+    {
+        "id":2,
+        "activity":"Walking",
+        "step":1,
+        "calorire-burned":8
+    },
+    {
+        "id":3,
+        "activity":"Cycling",
+        "step":1,
+        "calorire-burned":16
+    },
+    {
+        "id":4,
+        "activity":"Swimming",
+        "step":1,
+        "calorire-burned":21
+    },
+    {
+        "id":5,
+        "activity":"Dancing",
+        "step":1,
+        "calorire-burned":28
+    }
+]    

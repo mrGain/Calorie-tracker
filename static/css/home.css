@@ -1,0 +1,44 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+table{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 60%;
+    background: #fff;
+}
+th{
+    padding: .5rem;
+    background: var(--green);
+    border: 1px solid #dddddd;
+    color: #fff;
+}
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: .5rem;
+  }
+  .btn{
+    color: #fff;
+    padding: .2rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    margin: .5rem 0;
+    width: 100%;
+  }
+  .btn-edit{
+    background: #76BA99;
+  }
+  .btn-delete{
+    background: #E74C3C;
+  }
+  .btn:hover{
+    cursor: pointer;
+    background: #ccc;
+    color: #000;
+    /* border: .1rem solid #76BA99; */
+  }

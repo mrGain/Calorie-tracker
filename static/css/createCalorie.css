@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --green:#14C38E;
+    --black:#130f40;
+    --light-colour:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    /* text-decoration: none; */
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body{
+    background-color: #eee;
+}
+.container{
+    margin:2rem 30rem;
+}
+.heading{
+    text-align: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    background: #76BA99;
+    border-radius: .5rem;
+    color: #fff;
+    
+}
+
+.container .box-container .box{
+    background: #fff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-shadow: var(--box-shadow);
+}
+.form__group{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 4rem;
+    border: .1rem solid var(--green);
+    border-radius: .5rem;
+    padding: .5rem;
+    /* width: max-content; */
+    /* font-size: 2rem; */
+}
+.form__group input,select{
+    padding: .5rem;
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+    font-size: 1rem;
+    /* font-weight: 500; */
+    color: var(--black);
+}
+.form__group-2 p{
+    padding:1rem 0;
+}
+.form__group-2 .radio{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.food-dropdown select{
+    padding:.5rem 4rem;
+    border: .1rem solid var(--green);
+}
+input[type=submit]{
+    margin: 1rem 0;
+    /* border: .1rem solid var(--green); */
+    background: #76BA99;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: .5rem;
+    padding: 1rem 6rem;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+        <h1>home page goes here</h1>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Target Calorie Intake</th>
+                <th>Total Calorie Intake</th>
+                <th>Achived Calorie Intake</th>
+                <th>Target Calorie Burn</th>
+                <th>Total Calorie Burn</th>
+                <th>Achived Calorie Burn</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>21/23/22</td>
+                <td>RAkesh Gain</td>
+                <td>1200</td>
+                <td>1200</td>
+                <td>Yes</td>
+                <td>1200</td>
+                <td>100</td>
+                <td>NO</td>
+                <td>
+                    <button class="btn btn-edit">Edit</button>
+                    <button class="btn btn-delete">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+{% endblock content %}

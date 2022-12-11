@@ -1,0 +1,9 @@
+.heading{
+    margin: 2rem;
+    padding: 1rem 6rem;
+    font-size: 2rem;
+    font-weight: 500;
+    background: #76BA99;
+    border-radius: .5rem;
+    color: #fff;
+}
