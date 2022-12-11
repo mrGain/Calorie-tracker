@@ -1,0 +1,49 @@
+{% load static %}
+<div class="box-container">
+    <div class="box">
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            <div class="form__group">
+                <input type="date" name="date" id="date" placeholder="Enter Date">
+            </div>
+            <div class="form__group">
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form__group">
+                <input type="number" name="target_calorie_intake" id="target_calorie_intak" placeholder="Target Calorie Intake">
+            </div>
+            <div class="form__group">
+                <select name="food" id="food">
+                    <option value="food" selected="true" disabled="disabled">Select Food</option>
+                    {% for food in foodList %}
+                        <option value="{{ food }}">{{ food }}</option>
+                        <!-- <option value="rice">food</option> -->
+                    {% endfor %}
+                </select>
+            </div> 
+            <div class="form__group">
+                <input type="number" name="quantity" id="" placeholder="Enter Quantury consumed">
+            </div>
+        
+            <div class="form__group">
+                <input type="number" name="target_calorie_burn" id="date" placeholder="Tartget Calorie Burn" validate>
+            </div>
+
+            <div class="form__group">
+               <select name="activity" id="activity">
+                    <option value="activity" selected="true" disabled="disabled">Select Activity</option>
+                    {% for activity in activityList %}
+                    <option value="{{ activity }}">{{ activity }}</option>
+                    <!-- <option value="rice">food</option> -->
+                {% endfor %}
+               </select>
+            </div>
+            <div class="form__group">
+                <input type="number" name="step" id="name" placeholder="enter steps">
+            </div>
+            
+               
+            <input type="submit" value="Submit" class="submit-btn">    
+        </form>
+    </div>
+</div>

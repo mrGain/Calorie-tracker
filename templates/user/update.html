@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static '/css/createCalorie.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/update.css' %}"> -->
+{% endblock stylesheet %}
+
+{% block content %}
+    <div class="main-content container">
+        <h1 class="heading">Update Calorie Intake</h1>
+        <!-- Include form here  -->
+        <div class="box-container">
+            <div class="box">
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    <div class="form__group">
+                        <input type="date" name="date" id="date" placeholder="" value="{{ data.date }}">
+                    </div>
+                    <div class="form__group">
+                        <input type="text" name="name" id="name" palaceholder="" value="{{ data.name }}">
+                    </div>
+                    <div class="form__group">
+                        <input type="number" name="target_calorie_intake" id="target_calorie_intak" placeholder="Target Calorie Intake" value="{{ data.target_calorie_intake }}">
+                    </div>
+                    <div class="form__group">
+                        <select name="food" id="food">
+                            <option value="food" selected="true" disabled="disabled">Select Food</option>
+                            {% for food in foodList %}
+                                <option value="{{ food }}">{{ food }}</option>
+                                <!-- <option value="rice">food</option> -->
+                            {% endfor %}
+                        </select>
+                    </div> 
+                    <div class="form__group">
+                        <input type="number" name="quantity" id="" placeholder="Enter Quantury consumed" value="">
+                    </div>
+                
+                    <div class="form__group">
+                        <input type="number" name="target_calorie_burn" id="date" placeholder="Tartget Calorie Burn" validate value="{{ data.target_calorie_burn }}">
+                    </div>
+        
+                    <div class="form__group">
+                       <select name="activity" id="activity">
+                            <option value="activity" selected="true" disabled="disabled">Select Activity</option>
+                            {% for activity in activityList %}
+                            <option value="{{ activity }}">{{ activity }}</option>
+                            <!-- <option value="rice">food</option> -->
+                            {% endfor %}
+                       </select>
+                    </div>
+                    <div class="form__group">
+                        <input type="number" name="step" id="name" placeholder="enter steps">
+                    </div>
+                    
+                       
+                    <input type="submit" value="Submit">    
+                </form>
+            </div>
+        </div>
+            
+    </div>
+{% endblock content %}

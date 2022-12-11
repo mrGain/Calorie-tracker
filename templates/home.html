@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+{% endblock stylesheet %} 
 
 {% block content %}
     <div class="main">
-        <h1>home page goes here</h1>
+        <h1 class="title-home">User Calorie Intake and Burning Record </h1>
+        <div class="sort">
+            <div>
+                <a href="{% url 'asc_home' %}" class="sort_btn">ace</a>
+                <a href="{% url 'des_home' %}" class="sort_btn">des</a>
+            </div>
+            
+        </div>
         <table>
             <tr>
                 <th>Date</th>
@@ -15,20 +27,26 @@
                 <th>Achived Calorie Burn</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td>21/23/22</td>
-                <td>RAkesh Gain</td>
-                <td>1200</td>
-                <td>1200</td>
-                <td>Yes</td>
-                <td>1200</td>
-                <td>100</td>
-                <td>NO</td>
-                <td>
-                    <button class="btn btn-edit">Edit</button>
-                    <button class="btn btn-delete">Delete</button>
-                </td>
-            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.date }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.target_calorie_intake }}</td>
+                    <td>{{ user.total_calorie_intake }}</td>
+                    <td>{{ user.achived_calorie_intake }}</td>
+                    <td>{{ user.target_calorie_burn }}</td>
+                    <td>{{ user.total_calorie_burn }}</td>
+                    <td>{{ user.achived_calorie_burn }}</td>
+
+                    <td>
+                        <a href="{% url 'update' user.id %}" class="btns btn-edit" > Edit </a>
+                        <form action="{% url 'delete' user.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete" class="btns btn-delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}    
         </table>
     </div>
     

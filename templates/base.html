@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Calc</title>
     <link rel="stylesheet" href="{% static '/css/index.css' %}">
-    <link rel="stylesheet" href="{% static '/css/createCalorie.css' %}">
-    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/home.css' %}"> -->
+    
+    {% block stylesheet %}
+        
+    {% endblock stylesheet %}
+        
 </head>
 
 
@@ -21,10 +25,11 @@
 
     {% endblock content %}
 
+    <!-- footer includes here  -->
+    {% include 'includes/footer.html' %}
+    
     <script src="{% static '/js/index.js' %}"></script>
-    <footer>
-        <p>Created by Rakesh</p>
-    </footer>
+    
     
 </body>
 </html>
