@@ -31,6 +31,7 @@
 .sort_btn:hover{
     background: #76BA99;
 }
+
 table{
     border: 1px solid #000;
     border-collapse: collapse;
@@ -73,3 +74,38 @@ td{
     color: #000;
     /* border: .1rem solid #76BA99; */
   }
+
+@media screen and ( max-width:991px ) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    .main_table{
+        overflow-x: auto;
+    }
+    .main{
+      margin: 2rem 10rem;
+    }
+
+}
+@media (max-width:768px ){
+  .main{
+    margin: 2rem 2rem;
+  }
+}
+@media (max-width:450px){
+  html{
+      font-size: 50%;
+  }
+  .heading{
+      font-size: 2.5rem;
+  }
+  .main{
+    margin: 2rem 2rem;
+  }
+  .footer{
+      text-align: center;
+  }
+}

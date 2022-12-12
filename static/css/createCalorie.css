@@ -91,3 +91,39 @@ input[type=submit]:hover{
     background: var(--green);
     cursor: pointer;
 }
+
+/* Media query */
+@media screen and ( max-width:991px ) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    .main_table{
+        overflow-x: auto;
+    }
+    .container{
+        margin:2rem 15rem;
+    }
+
+}
+@media (max-width:768px ){
+    .container{
+      margin: 2rem 5rem;
+    }
+}
+@media (max-width:450px){
+  html{
+      font-size: 50%;
+  }
+  .heading{
+      font-size: 2.5rem;
+  }
+  .footer{
+      text-align: center;
+  }
+  .container{
+    margin: 2rem 5rem;
+  }
+}

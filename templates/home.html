@@ -15,39 +15,42 @@
             </div>
             
         </div>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Name</th>
-                <th>Target Calorie Intake</th>
-                <th>Total Calorie Intake</th>
-                <th>Achived Calorie Intake</th>
-                <th>Target Calorie Burn</th>
-                <th>Total Calorie Burn</th>
-                <th>Achived Calorie Burn</th>
-                <th>Action</th>
-            </tr>
-            {% for user in users %}
+        <div class="main_table">
+            <table>
                 <tr>
-                    <td>{{ user.date }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.target_calorie_intake }}</td>
-                    <td>{{ user.total_calorie_intake }}</td>
-                    <td>{{ user.achived_calorie_intake }}</td>
-                    <td>{{ user.target_calorie_burn }}</td>
-                    <td>{{ user.total_calorie_burn }}</td>
-                    <td>{{ user.achived_calorie_burn }}</td>
-
-                    <td>
-                        <a href="{% url 'update' user.id %}" class="btns btn-edit" > Edit </a>
-                        <form action="{% url 'delete' user.id %}" method="post">
-                            {% csrf_token %}
-                            <input type="submit" value="Delete" class="btns btn-delete">
-                        </form>
-                    </td>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Target Calorie Intake</th>
+                    <th>Total Calorie Intake</th>
+                    <th>Achived Calorie Intake</th>
+                    <th>Target Calorie Burn</th>
+                    <th>Total Calorie Burn</th>
+                    <th>Achived Calorie Burn</th>
+                    <th>Action</th>
                 </tr>
-            {% endfor %}    
-        </table>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.date }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.target_calorie_intake }}</td>
+                        <td>{{ user.total_calorie_intake }}</td>
+                        <td>{{ user.achived_calorie_intake }}</td>
+                        <td>{{ user.target_calorie_burn }}</td>
+                        <td>{{ user.total_calorie_burn }}</td>
+                        <td>{{ user.achived_calorie_burn }}</td>
+    
+                        <td>
+                            <a href="{% url 'update' user.id %}" class="btns btn-edit" > Edit </a>
+                            <form action="{% url 'delete' user.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Delete" class="btns btn-delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}    
+            </table>
+        </div>
+        
     </div>
     
 {% endblock content %}
