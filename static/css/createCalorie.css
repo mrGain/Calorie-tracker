@@ -26,6 +26,10 @@ body{
 .container{
     margin:2rem 30rem;
 }
+#container{
+    overflow: auto;
+    padding-bottom: 5rem
+}
 .heading{
     text-align: center;
     align-items: center;
@@ -100,6 +104,12 @@ input[type=submit]{
 input[type=submit]:hover{
     background: var(--green);
     cursor: pointer;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Media query */
