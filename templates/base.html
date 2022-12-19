@@ -15,6 +15,12 @@
     {% block stylesheet %}
         
     {% endblock stylesheet %}
+
+    <!-- CDN goes here -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    {% block script %}
+
+    {% endblock script %}
         
 </head>
 
@@ -35,6 +41,9 @@
     {% include 'includes/footer.html' %}
     
     <script src="{% static '/js/index.js' %}"></script>
+    {% block scriptfoot %}
+
+    {% endblock scriptfoot %}
     
     
 </body>

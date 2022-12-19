@@ -4,6 +4,7 @@ from django.db import models
 class User(models.Model):
     # date = models.DateField(auto_now_add=True)
     date = models.DateField()
+    time = models.TimeField(blank=True)
     name = models.CharField(max_length=100)
     target_calorie_intake = models.IntegerField()
     total_calorie_intake = models.IntegerField()

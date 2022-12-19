@@ -11,17 +11,14 @@
     border-radius: .5rem;
 }
 .sort{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 .sort_btn{
-    margin: 1rem 0;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
+    /* margin: 1rem 0; */
+    padding: .1rem .5rem;
+    border-radius: .2rem;
     border: none;
-    background: #b9e9d2;
+    background: #478c8d;
     color: #000;
     font-size: 1rem;
     font-weight: 300;
@@ -29,11 +26,12 @@
     cursor: pointer;
 }
 .sort_btn:hover{
-    background: #76BA99;
+    background: #62B6B7;
+    outline: solid 0.001rem #2d5253; ;
 }
 
 table{
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     border-collapse: collapse;
     width: 100%;
     background: #fff;
@@ -45,35 +43,35 @@ th{
     border: 1px solid #dddddd;
     color: #fff;
 }
+th:first-child{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 td{
     border: 1px solid #dddddd;
     text-align: center;
     padding: .5rem;
   }
 
-  .btns{
-    font-size: 1rem;
-    color: #fff;
-    padding: .2rem 1rem;
-    border-radius: .5rem;
-    border: none;
-    margin: .5rem 0;
-    width: 100%;
-  }
-  .btn-edit{
-    background: #14C38E;
-    text-decoration: none;
-    padding: .2rem 2rem;
-  }
-  .btn-delete{
-    background: #E74C3C;
-  }
-  .btns:hover{
-    cursor: pointer;
-    background: #ccc;
-    color: #000;
-    /* border: .1rem solid #76BA99; */
-  }
+.btns{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-edit{
+  color: #14C38E;
+}
+.btn-delete{
+  padding-left: 2rem;
+  align-items: center;
+  color: #E74C3C;
+}
+.btn-delete:hover{
+  color: #E74C3C;
+  cursor: pointer;
+
+}
 
 @media screen and ( max-width:991px ) {
     html{

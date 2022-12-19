@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static '/css/createCalorie.css' %}">       
+{% endblock stylesheet %}
+
+{% block script %}
+    <script src="{% static '/js/nutrients.js' %}"></script>
+{% endblock script %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="heading" >Check the Nutrients of Food</h1>
+        <div class="box-container">
+            <div class="box">
+                
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="form__group">
+                        <select name="food" id="food" onchange="this.form.submit()" onsubmit="">
+                            <option value="food" selected="true" disabled="disabled">Select Food</option>
+                            {% for food in foodList %}
+                                <option value="{{ food }}">{{ food }}</option>
+                            {% endfor %}
+                        </select>
+                    <!-- <input type="submit" value="Submit"> -->
+                    </div>
+                </form>
+
+                <canvas id="pie-chart"></canvas>
+            </div>
+           
+            
+        </div>
+    </div>
+    
+
+
+{% endblock content %}
+
+{% block scriptfoot %}
+    <script>
+        var config = {
+            type: 'pie',
+            data: {
+                datasets: [{
+                data: {{ data|safe }},
+                backgroundColor:[
+                    '#C0DEFF', '#DC0000', '#D0B8A8'
+                ],
+                label: 'Population'
+                }],
+                labels: {{ labels|safe }}
+            },
+            options: {
+                responsive: true
+            }
+        };
+
+        window.onload = function() {
+            console.log("window.onload");
+            var ctx = document.getElementById('pie-chart').getContext('2d');
+            window.myPie = new Chart(ctx, config);
+        };
+    </script>
+{% endblock scriptfoot %}

@@ -3,30 +3,45 @@
         "id":1,
         "food":"Rice",
         "calories":50,
-        "quantity":1
+        "quantity":1,
+        "carbohydrate":82,
+        "protein":12,
+        "fat":2
     },
     {
         "id":2,
         "food":"Roti",
         "calories":80,
-        "quantity":1
+        "quantity":1,
+        "carbohydrate":30,
+        "protein":40,
+        "fat":12
     },
     {
         "id":3,
         "food":"apple",
         "calories":100,
-        "quantity":1
+        "quantity":1,
+        "carbohydrate":20,
+        "protein":50,
+        "fat":10
     },
     {
         "id":4,
         "food":"orange",
         "calories":120,
-        "quantity":1
+        "quantity":1,
+        "carbohydrate":20,
+        "protein":70,
+        "fat":10
     },
     {
         "id":5,
         "food":"banana",
         "calories":70,
-        "quantity":1
+        "quantity":1,
+        "carbohydrate":50,
+        "protein":27,
+        "fat":13
     }
 ]

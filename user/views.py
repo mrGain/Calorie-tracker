@@ -67,6 +67,7 @@ class CreateView(View):
         data = request.POST
         # print(data)
         date = data['date']
+        time = data['time']
         name = data['name']
         target_calorie_intake = int(data['target_calorie_intake'])
         food_in= data['food']
@@ -99,6 +100,7 @@ class CreateView(View):
 
         user = User(
             date = date,
+            time = time,
             name = name,
             target_calorie_intake = target_calorie_intake,
             total_calorie_intake = total_calorie_intake,
@@ -183,7 +185,49 @@ class UserUpdateView(View):
         data.save()
         return redirect('home')
         
-    # Delete the user records
+   
+
+class NutrientsView(View):
+    def __init__(self):
+        data = DataList()
+        self.foods = data.foods
+        # self.activities = data.activities
+        self.food_list = data.food_list
+        self.activity_list = data.activity_list
+
+    def get(self, request):
+        return render(request, 'nutrients.html',
+            {
+                'foodList':self.foods,
+                # 'activityList':self.activities
+            }
+        )
+    def post(self, request):
+        input_data = request.POST
+        labels = []
+        data = []
+        for i in self.food_list:
+            if input_data['food'] == i['food']:
+                labels = list(i.keys())
+                data = list(i.values())
+                break
+        labels = labels[-3:]  
+        data = data[-3:]  
+        # print(labels)
+        # print(data)    
+        return render(request, 'nutrients.html',
+            {
+                "data":data,
+                "labels":labels,
+                "foodList":self.foods
+            }
+        )
+                
+        # return redirect('home')    
+
+
+
+# Delete the user records
 class DeleteView(View):
     def post(self, request,id):
         data = User.objects.get(pk=id)

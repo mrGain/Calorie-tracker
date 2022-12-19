@@ -44,17 +44,15 @@ body{
 
 .navbar a{
     text-decoration: none;
+    font-size: 1.2rem;
     border-radius: .5rem;
     border: none;
-    background: #76BA99;
     margin: 0 .5rem;
-    padding: .5rem 1rem;
-    color: #fff;
+    padding: .5rem .5rem;
+    color: #76BA99;
 }
-.navbar a:hover{
-    background:none;
-    color: var(--black);
-    border: .1rem solid var(--black);
+.navbar a:hover{ 
+    background: #EFEFEF; 
 }
 #menu-btn{
     display: none;

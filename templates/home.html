@@ -8,17 +8,20 @@
 {% block content %}
     <div class="main">
         <h1 class="title-home">User Calorie Intake and Burning Record </h1>
-        <div class="sort">
-            <div>
-                <a href="{% url 'asc_home' %}" class="sort_btn">ace</a>
-                <a href="{% url 'des_home' %}" class="sort_btn">des</a>
-            </div>
-            
-        </div>
+        
         <div class="main_table">
             <table>
                 <tr>
-                    <th>Date</th>
+                    <th>Date
+                        <div class="sort">
+                            
+                            <div>
+                                <a href="{% url 'asc_home' %}" class="sort_btn"><i class="fa-solid fa-chevron-up"></i></a>
+                                <a href="{% url 'des_home' %}" class="sort_btn"><i class="fa-solid fa-chevron-down"></i></a>
+                            </div>
+                            
+                        </div>
+                    </th>
                     <th>Name</th>
                     <th>Target Calorie Intake</th>
                     <th>Total Calorie Intake</th>
@@ -39,12 +42,18 @@
                         <td>{{ user.total_calorie_burn }}</td>
                         <td>{{ user.achived_calorie_burn }}</td>
     
-                        <td>
-                            <a href="{% url 'update' user.id %}" class="btns btn-edit" > Edit </a>
-                            <form action="{% url 'delete' user.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="submit" value="Delete" class="btns btn-delete">
-                            </form>
+                        <td class="btns">
+                            <div>
+                                <a href="{% url 'update' user.id %}" class="btn-edit" > <i class="fa-solid fa-pen-to-square"></i> </a>
+                            </div>
+                            <div>
+                                <form action="{% url 'delete' user.id %}" method="post">
+                                    {% csrf_token %}
+                                    <label for="delete" class="btn-delete"><i class="fa-solid fa-trash-can"></i></label>
+                                    <input type="submit" value="" id="delete" class="">
+                                </form>
+                            </div>
+                            
                         </td>
                     </tr>
                 {% endfor %}    
