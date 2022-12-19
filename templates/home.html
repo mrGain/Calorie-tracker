@@ -37,10 +37,22 @@
                         <td>{{ user.name }}</td>
                         <td>{{ user.target_calorie_intake }}</td>
                         <td>{{ user.total_calorie_intake }}</td>
-                        <td>{{ user.achived_calorie_intake }}</td>
+                        <td>
+                            {% if user.achived_calorie_intake %}
+                                <i class="fa-solid fa-check"></i>
+                            {% else %}
+                                <i class="fa-solid fa-xmark"></i>    
+                            {% endif %}
+                        </td>
                         <td>{{ user.target_calorie_burn }}</td>
                         <td>{{ user.total_calorie_burn }}</td>
-                        <td>{{ user.achived_calorie_burn }}</td>
+                        <td>
+                            {% if user.achived_calorie_burn %}
+                                <i class="fa-solid fa-check"></i>
+                            {% else %}
+                                <i class="fa-solid fa-xmark"></i>    
+                            {% endif %}
+                        </td>
     
                         <td class="btns">
                             <div>
