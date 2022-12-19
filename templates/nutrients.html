@@ -21,13 +21,14 @@
                         <select name="food" id="food" onchange="this.form.submit()" onsubmit="">
                             <option value="food" selected="true" disabled="disabled">Select Food</option>
                             {% for food in foodList %}
-                                <option value="{{ food }}">{{ food }}</option>
+                                <option value="{{ food }}" >{{ food }}</option>
                             {% endfor %}
                         </select>
                     <!-- <input type="submit" value="Submit"> -->
                     </div>
                 </form>
-
+            
+                <h4>{{selected_food}}</h4>
                 <canvas id="pie-chart"></canvas>
             </div>
            
@@ -47,9 +48,9 @@
                 datasets: [{
                 data: {{ data|safe }},
                 backgroundColor:[
-                    '#C0DEFF', '#DC0000', '#D0B8A8'
+                    '#009EFF', '#EF9A53', '#D0B8A8'
                 ],
-                label: 'Population'
+                label: 'Nutrients'
                 }],
                 labels: {{ labels|safe }}
             },

@@ -219,7 +219,8 @@ class NutrientsView(View):
             {
                 "data":data,
                 "labels":labels,
-                "foodList":self.foods
+                "foodList":self.foods,
+                "selected_food":input_data['food']
             }
         )
                 
