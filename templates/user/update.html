@@ -14,8 +14,13 @@
             <div class="box">
                 <form action="" method="post" class="form">
                     {% csrf_token %}
-                    <div class="form__group">
-                        <input type="date" name="date" id="date" placeholder="" value="{{ data.date }}">
+                    <div class="date_time">
+                        <div class="form__group">
+                            <input type="date" name="date" id="date" placeholder="Enter Date">
+                        </div>
+                        <div class="form__group">
+                            <input type="time" name="time" id="time" placeholder="Enter time">
+                        </div>
                     </div>
                     <div class="form__group">
                         <input type="text" name="name" id="name" palaceholder="" value="{{ data.name }}">
